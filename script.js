@@ -46,6 +46,7 @@ const insertEndpoints = [
   '/api/penilaian/get-nilai-akhir',
   '/api/penilaian/get-capaian-kompetensi',
   '/api/penilaian/simpan-nilai-akhir',
+  '/api/dashboard/detil-penilaian',
 ];
 
 const payloads = [
@@ -188,6 +189,11 @@ const payloads = [
         "918f973a-ea31-4493-975e-557bfe3155f7#5bdab811-cb77-4d3a-8e7b-e143a080be90": "1",
         "9a2d5b22-fa64-49bb-955c-309a66ab858b#5bdab811-cb77-4d3a-8e7b-e143a080be90": "0"
     }
+  }),
+
+  JSON.stringify({
+    "pembelajaran_id": "9e2f2df1-f16d-47b6-b74c-6f4b59338e2f",
+    "rombongan_belajar_id": "139e51b2-3798-48ff-b7e6-484cf976d03f"
   })
 ];
 
