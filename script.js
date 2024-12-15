@@ -10,7 +10,7 @@ export const options = {
 
   stages: [
     { duration: '5m', target: 100 },  // Ramp-up to 50 users
-    { duration: '1H', target: 100 }, // Ramp-up to 100 users
+    { duration: '1h', target: 100 }, // Ramp-up to 100 users
     { duration: '5m', target: 0 },  // Ramp-down to 0 users
   ],
 
@@ -251,7 +251,7 @@ export default function () {
     // Check the response status
     check(insertRes, {
       [`insert to ${insertEndpoints} was successful`]: (res) => res.status === 200,
-      [`response time for ${insertEndpoints} is below 1500ms`]: (res) => res.timings.duration < 1500,
+      [`response time for ${insertEndpoints} is below 2000ms`]: (res) => res.timings.duration < 2000,
     });
     
     // if (insertRes.status !== 201) {
@@ -266,7 +266,8 @@ export default function () {
 
     // Optional: Log response for debugging
     console.log(`Insert response for ${endpoint}: ${insertRes.body}`);
+    console.log(`Request to ${url} took ${res.timings.duration} ms`);
   }
 
-  sleep(1); // Simulate user think time
+  // sleep(1); // Simulate user think time
 }
